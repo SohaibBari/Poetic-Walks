@@ -137,7 +137,6 @@ public class ConcreteEdgesGraphTest extends GraphInstanceTest {
     	
     	assertEquals("expected map of target vertex",
                expectedMap, CEG4.sources(vertex2));
-    	System.out.print(CEG4);
     }
     
     @Test

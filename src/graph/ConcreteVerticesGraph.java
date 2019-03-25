@@ -101,6 +101,20 @@ public class ConcreteVerticesGraph implements Graph<String> {
     }
     
     // TODO toString()
+    public String toString() {
+    	String ret="";
+    	for (Vertex vertex: vertices) {
+    		String vertex1 = vertex.getlabel();
+    		Map<String, Integer> map = new HashMap<String, Integer>();
+    		map = vertex.getTargets();
+    		for (String vertex2: map.keySet()) {
+    			ret+= "("+ vertex1 + "," + vertex2+ "," + map.get(vertex2) + ")";
+    		}
+    		
+    	}
+    	
+    	return ret;
+    }
     
 }
 

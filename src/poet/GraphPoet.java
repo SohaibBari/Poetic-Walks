@@ -10,6 +10,7 @@ import java.util.Scanner;
 import java.io.IOException;
 
 import graph.ConcreteEdgesGraph;
+import graph.ConcreteVerticesGraph;
 import graph.Graph;
 
 /**
@@ -56,7 +57,7 @@ import graph.Graph;
  */
 public class GraphPoet {
     
-    private final Graph<String> graph = new ConcreteEdgesGraph();
+    private final Graph<String> graph = new ConcreteVerticesGraph();
     
     // Abstraction function:
     //   Uses a graph to create a poet
@@ -77,19 +78,22 @@ public class GraphPoet {
         boolean first= true;;
         while (sc.hasNext()) {
         	if (first) {
-        		word = sc.next();
+        		word = sc.next().toLowerCase();
         		first= false;
         	}
         	else {
         		pword=word;
-        		word = sc.next();
+        		word = sc.next().toLowerCase();
         		
         		Map<String, Integer> sources = new HashMap<String, Integer>();
-        		
+        		System.out.println(word);
         		sources = graph.sources(word);
-        		
+        		//System.out.println("adding: " + pword+ word);
+        		System.out.println(sources);
         		if (sources.containsKey(pword)) {
-        			graph.set(pword, word, sources.get(word)+1);
+        			System.out.println("found");
+        			int w = sources.get(pword);
+        			graph.set(pword, word, w+1);
         		}
         		else {
         			graph.set(pword, word, 1);
@@ -118,13 +122,13 @@ public class GraphPoet {
         boolean first= true;;
         while (sc.hasNext()) {
         	if (first) {
-        		word = sc.next();
+        		word = sc.next().toLowerCase();
         		first= false;
         	}
         	else {
-        		output+=word;
+        		output+=word + " ";
         		pword=word;
-        		word = sc.next();
+        		word = sc.next().toLowerCase();
         		
         		Map<String, Integer> sources = new HashMap<String, Integer>();
         		
@@ -134,7 +138,7 @@ public class GraphPoet {
         			Map<String, Integer> sources2 = new HashMap<String, Integer>();
         			sources2 = graph.sources(key);
         			if (sources2.containsKey(pword)) {
-            			output += key;
+            			output += key+ " ";
             			found=true;
             			break;
             		}
