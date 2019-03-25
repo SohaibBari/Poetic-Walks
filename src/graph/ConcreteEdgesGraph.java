@@ -58,7 +58,7 @@ public class ConcreteEdgesGraph implements Graph<String> {
         
         boolean exists=false;
         for (Edge edge: edges) {
-        	if (edge.getSource()==source && edge.getTarget()==target) {
+        	if (edge.getSource().equals(source) && edge.getTarget().equals(target)) {
         		exists= true;
         		ret = edge.getWeight();
         		if (weight == 0) {

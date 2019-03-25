@@ -57,7 +57,7 @@ import graph.Graph;
  */
 public class GraphPoet {
     
-    private final Graph<String> graph = new ConcreteVerticesGraph();
+    private final Graph<String> graph = new ConcreteEdgesGraph();
     
     // Abstraction function:
     //   Uses a graph to create a poet
