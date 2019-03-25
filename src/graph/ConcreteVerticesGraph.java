@@ -80,7 +80,6 @@ public class ConcreteVerticesGraph implements Graph<String> {
     	for (Vertex vert: vertices) {
     		Map<String, Integer> targets = new HashMap<String, Integer>();
     		targets = vert.getTargets();
-    		System.out.println(targets);
     		if(targets.containsKey(target)) {
     			map.put(vert.getlabel(),targets.get(target));
     		}

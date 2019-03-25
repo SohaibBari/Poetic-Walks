@@ -54,7 +54,7 @@ public class ConcreteEdgesGraph implements Graph<String> {
     @Override public int set(String source, String target, int weight) {
         add(source);
         add(target);
-        int ret =0;
+        int ret = 0;
         
         boolean exists=false;
         for (Edge edge: edges) {
@@ -100,7 +100,7 @@ public class ConcreteEdgesGraph implements Graph<String> {
     @Override public Map<String, Integer> sources(String target) {
     	Map<String, Integer> map = new HashMap<String, Integer>();
     	for (Edge edge: edges) {
-        	if (edge.getTarget()==target) {
+        	if (edge.getTarget().equals(target)) {
         		map.put(edge.getSource(), edge.getWeight());
         	}
         }
@@ -110,7 +110,7 @@ public class ConcreteEdgesGraph implements Graph<String> {
     @Override public Map<String, Integer> targets(String source) {
     	Map<String, Integer> map = new HashMap<String, Integer>();
     	for (Edge edge: edges) {
-        	if (edge.getSource()==source) {
+        	if (edge.getSource().equals(source)) {
         		map.put(edge.getTarget(), edge.getWeight());
         	}
         }

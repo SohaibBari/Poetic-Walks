@@ -86,12 +86,8 @@ public class GraphPoet {
         		word = sc.next().toLowerCase();
         		
         		Map<String, Integer> sources = new HashMap<String, Integer>();
-        		System.out.println(word);
         		sources = graph.sources(word);
-        		//System.out.println("adding: " + pword+ word);
-        		System.out.println(sources);
         		if (sources.containsKey(pword)) {
-        			System.out.println("found");
         			int w = sources.get(pword);
         			graph.set(pword, word, w+1);
         		}
