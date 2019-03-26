@@ -66,8 +66,6 @@ public class GraphPoetTest {
         String input = "to new worlds.";
         String outputPoem = graph.poem(input);
         String correctPoem = "to explore new worlds.";
-        System.out.print(outputPoem);
-        System.out.print(correctPoem);
         assertEquals(correctPoem, outputPoem);
     }
     
@@ -77,11 +75,9 @@ public class GraphPoetTest {
         File givenCorpus = new File("test/poet/mugar-omni-theater.txt");
         GraphPoet graph = new GraphPoet(givenCorpus);
         //System.out.println(graph.toString());
-        String input = "to seek new 1 civiisations";
+        String input = "to seek new 1 civilizations";
         String outputPoem = graph.poem(input);
-        String correctPoem = "to seek out new life 1 new civilizations";
-        System.out.print(outputPoem);
-        System.out.print(correctPoem);
+        String correctPoem = "to seek out new 1 civilizations";
         assertEquals(correctPoem, outputPoem);
     }
 }
